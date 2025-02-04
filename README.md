@@ -1,2 +1,0 @@
-# ethsdg
-dashboard for ETHSDG 
