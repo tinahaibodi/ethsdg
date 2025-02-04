@@ -1,1 +1,3 @@
-Ethereum Sustainability Goals and Standards
+# Ethereum Sustainability Goals and Standards
+
+Website for ETHSDG
