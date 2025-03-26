@@ -15,8 +15,6 @@ export default async function DashboardPage() {
 
   const data: Project[] = await res.json()
 
-  console.log(data)
-
   return (
     <div className={`min-h-screen bg-[#3D4A3A] text-[#E5E5E0] ${inter.className}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

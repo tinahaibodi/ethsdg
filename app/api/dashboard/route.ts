@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+const isDev = process.env.NODE_ENV === 'development';
+const REVALIDATE = isDev ? 1 : 3600;
 
 const GITHUB_OWNER = '0xZakk';
 const GITHUB_REPO = 'ETHSDG';
@@ -11,6 +13,9 @@ export async function GET() {
     {
       headers: {
         'Accept': 'application/vnd.github.v3+json',
+      },
+      next: {
+        revalidate: REVALIDATE
       }
     }
   )
@@ -23,7 +28,11 @@ export async function GET() {
   const combinedData = await Promise.all(
     files
       .map(async (file: any) => {
-        const fileRes = await fetch(file.download_url);
+        const fileRes = await fetch(file.download_url, {
+          next: {
+            revalidate: REVALIDATE
+          }
+        });
         const content = await fileRes.text();
         return JSON.parse(content);
       })
