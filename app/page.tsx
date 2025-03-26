@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { NavigationMenu } from "./components/navigation-menu"
 import { JetBrains_Mono, Inter } from "next/font/google"
+import Link from "next/link"
 
 const mono = JetBrains_Mono({ subsets: ["latin"] })
 const inter = Inter({ subsets: ["latin"] })
@@ -28,12 +29,14 @@ export default function Home() {
             Identifying coherence with Ethereum
           </p>
           <div className="flex gap-4">
-            <Button
-              size="lg"
-              className={`${mono.className} h-12 rounded-none bg-[#E5E5E0] px-6 text-sm text-[#3D4A3A] hover:bg-[#D1D1CC]`}
-            >
-              View Dashboard
-            </Button>
+            <Link href="/dashboard">
+              <Button
+                size="lg"
+                className={`${mono.className} h-12 rounded-none bg-[#E5E5E0] px-6 text-sm text-[#3D4A3A] hover:bg-[#D1D1CC]`}
+              >
+                View Dashboard
+              </Button>
+            </Link>
             <Button
               variant="outline"
               size="lg"
