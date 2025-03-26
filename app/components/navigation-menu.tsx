@@ -25,9 +25,6 @@ export function NavigationMenu() {
         <Link href="#" className="text-xs text-[#B8C4B5] hover:text-[#E5E5E0] hover:underline">
           Docs
         </Link>
-        <Link href="/blog" className="text-xs text-[#B8C4B5] hover:text-[#E5E5E0] hover:underline">
-          Blog
-        </Link>
       </div>
     </nav>
   )
