@@ -24,7 +24,7 @@ export const columns: ColumnDef<Project>[] = [
   {
     accessorKey: "id",
     header: "#",
-    cell: ({ row }) => <div className="w-4">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="w-4">{row.index}</div>,
   },
   {
     accessorKey: "name",
@@ -58,7 +58,7 @@ export const columns: ColumnDef<Project>[] = [
     header: "TVL",
     cell: ({ row }) => {
       const impact = row.getValue("impact") as string
-      const change = (row.getValue("change") as string) || "0%"
+      const change = row.original.change || "0%"
       return (
         <div className="flex items-center gap-2">
           <span>{impact}</span>
